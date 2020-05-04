@@ -1,3 +1,4 @@
+/* esto es un backup */ 
 var objetoAjax = new XMLHttpRequest();
 var datos;
 var datosArray = {};
@@ -19,27 +20,22 @@ var $ok = true;
 var $padre = document.getElementById("noticiasPadre");
 var $paginaAnterior;
 var $paginaActual = 1;
-var $f5 = false;
+var $f5 = true;
 var $colorActualizarS = null;
 var $colorActualizarP = null;
 var $ir;
-var $movimento = 0;
-var $limiteIzquierdo = 0;
-var $limiteDerecho = 0;
+var $movimiento = 0;
+var $aa = 1;
+var $zz = $aa + 3;
+var $limiteDerecho;
+var $limiteIzquierdo;
+var $foco = 1;
+var $idColorAzul = null;
 var $up = document.getElementById("up");
 var $section = document.getElementById("sectionNoticias");
-// aqui es donde empiezo la edicion para la paginacion 
+var $idNumerosPaginaS = new Array();
+var $idNumerosPaginaP = new Array();
 
-   var $_a = 1;
-   var $_z = $_a +3;
-   var $idNumerosnumerosnumerosS = new Array();
-   var $idNumerosnumerosnumerosP = new Array();
-   var $idNumeroAzul = "";
-   var $idNumeroAzulPost = "";
-   var $cambiarAzul = false;
-   var $one = true;
-
-// ===================================================
 var $ejeYLeerMas;
 var $ejeXLeerMas;
 
@@ -89,7 +85,7 @@ function traer($inicio, $fin){
             <img src="${rutaImagenes+datos[i]['miniatura']}" alt="imagen">
          </div>
          <div class="z2">
-            <a href="articuloPrincipal.php?id=${datos[i]['id']}"><h2 class="articleNoticiasTitulo titulo">${datos[i]['titulo']}</h2></a>
+            <a href="articuloPrincipal.php?id=${datos[i]['id']}"><h2 class="articleNoticiasTitulo titulo">${datos[i]['titulo']} </h2></a>
             <div class="noticiasFecha">${$fecha}</div>
             <div class="dc">
 
@@ -148,140 +144,93 @@ $derP.addEventListener('click',function(e){
 // ===================================================== Funciones secundarias =================================
 function moverPaginas($idDireccion) {
 
-
+   
    var $mover;
    if ($idDireccion == "izqS" || $idDireccion == "izqP") {
-
-      
 
       $v = $paginaActual-1;// aqui capturo valor de boton en paginacion
       $v = ($v < 1)? 1: $v;
       document.cookie = `pag = ${$v}`;
-      if ($_a > 1) {
-         --$_a;
-         --$_z;
+      if ($aa > 1) {
+         --$aa
+         --$zz
       }
       $mover = ($paginaActual != 1)? $paginaActual-1: $paginaActual;
-      
+      $foco = $mover;
    }else{
-      if ($one) {
-         document.getElementById("ps1").style.backgroundColor ="#84c2e6";
-         document.getElementById("pp1").style.backgroundColor ="#84c2e6";
-         $one = false;
-      }
+      
       $v = $paginaActual+1;// aqui capturo valor de boton en paginacion
       $v = $v > $numeroPaginas? $numeroPaginas:$v;
       document.cookie = `pag = ${$v}`;
-      $movimento++;
-      if ($_z < $numeroPaginas) {
-         ++$_a;
-         ++$_z;
+      if($zz < $numeroPaginas){
+         ++$aa;
+         ++$zz;
       }
-      $mover = ($paginaActual != $numeroPaginas)? $paginaActual+1: $paginaActual;
-   }
 
-   
-   
+      $mover = ($paginaActual != $numeroPaginas)? $paginaActual+1: $paginaActual;
+      $foco = $mover;
+   }
    if ($limiteDerecho != $numeroPaginas) {
       if ($idDireccion == "derS" && $limiteDerecho == $paginaActual) {
+         
          actualizarPaginacion();
-         paginacion();
+         paginacion($foco);
       }
       if ($idDireccion == "derP" && $limiteDerecho == $paginaActual) {
          actualizarPaginacion();
-         paginacion();
+         paginacion($foco);
       }
    }
    if ($limiteIzquierdo != 1) {
+      
       if ($idDireccion == "izqS" && $limiteIzquierdo == $paginaActual) {
          actualizarPaginacion();
-         paginacion();
+         paginacion($foco);
       }
       if ($idDireccion == "izqP" && $limiteIzquierdo == $paginaActual) {
          actualizarPaginacion();
-         paginacion();
+         paginacion($foco);
       }
    }
    
-   if($idDireccion == "izqS" && $paginaActual == 1 || $idDireccion == "izqP" && $paginaActual == 1){
-      //document.getElementById("ps"+$ir).style.backgroundColor="#94F2A2";
-      //document.getElementById("pp"+$ir).style.backgroundColor="#94F2A2";            
-   }else if($idDireccion == "derS" && $paginaActual == $numeroPaginas || $idDireccion == "derP" && $paginaActual == $numeroPaginas){
-      //document.getElementById("ps"+$ir).style.backgroundColor="#94F2A2";
-      //document.getElementById("pp"+$ir).style.backgroundColor="#94F2A2";    
-      //document.getElementById("pp"+$ir).style.backgroundColor="#94F2A2";    
-   }else{
-      
-      $paginaAnterior = $paginaActual;
-      $paginaActual = $mover;
-      $ir = $paginaActual;
-      $padre.innerHTML = "";
-      //document.getElementById("ps"+$ir).style.backgroundColor="#94F2A2";
-      //document.getElementById("pp"+$ir).style.backgroundColor="#94F2A2";
-      
-      $inicio = ($paginaActual==1)? 0: $paginaActual*6-6;
-      $fin = $inicio+6;
-      
-      //document.getElementById("ps"+$paginaAnterior).style.backgroundColor="#84c2e6";
-      //document.getElementById("pp"+$paginaAnterior).style.backgroundColor="#84c2e6";
+   $paginaAnterior = $paginaActual;
+   $paginaActual = $mover;
+   $ir = $paginaActual;
+   $padre.innerHTML = "";
 
 
-      // preparando la solucion ++++++++++++++++++++++++++++++++++++++
-      
-      console.log($mover +" mover");
-      console.log($paginaAnterior +" paginaActual");
+   $inicio = ($paginaActual==1)? 0: $paginaActual*6-6;
+   $fin = $inicio+6;
 
-      if ($cambiarAzul) {
-         document.getElementById($idNumeroAzul).style.backgroundColor="#84c2e6";//azul
-         document.getElementById($idNumeroAzulPost).style.backgroundColor="#84c2e6";//azul
-      }
+   if ($idColorAzul != null) {
 
-
-      if ($idNumeroAzul != $idNumerosnumerosnumerosS[$mover]) {
-         document.getElementById($idNumerosnumerosnumerosS[$mover]).style.backgroundColor="#94F2A2";//verde
-         document.getElementById($idNumerosnumerosnumerosP[$mover]).style.backgroundColor="#94F2A2";//verde
-         $cambiarAzul = true;
-      }
-
-      $idNumeroAzul = $idNumerosnumerosnumerosS[$mover];
-      $idNumeroAzulPost = $idNumerosnumerosnumerosP[$mover];
+      document.getElementById($idColorAzul).style.backgroundColor="#84c2e6";//azul
    
-      // preparando la solucion ++++++++++++++++++++++++++++++++++++++
-      traer($inicio,$fin);
    }
+
+   traer($inicio,$fin);
 }
 
 
-
-
 function cambiarPagina(e){
-
+   
    if (e.target.value != undefined) {
-      if ($one) {
-         document.getElementById("ps1").style.backgroundColor ="#84c2e6";
-         document.getElementById("pp1").style.backgroundColor ="#84c2e6";
-         $one = false;
-      }
-      var $n1 = e.target.id;
-      $n = Number.parseInt($n1.substring(2));
-
-      $v = e.target.value;// aqui capturo valor de boton en paginacion 1 2 3 
-      document.cookie = `pag = ${$v}`;
-
-      // esto es el codigo de cambio de color de numeros ++++++++++++++++++++++++++//////////////////77
-      if ($cambiarAzul) {
-         document.getElementById($idNumeroAzul).style.backgroundColor="#84c2e6";//azul
-         document.getElementById($idNumeroAzulPost).style.backgroundColor="#84c2e6";//azul
-      }  
-      if ($idNumeroAzul != $idNumerosnumerosnumerosS[$n]) {
-         document.getElementById($idNumerosnumerosnumerosS[$n]).style.backgroundColor="#94F2A2";//verde
-         document.getElementById($idNumerosnumerosnumerosP[$n]).style.backgroundColor="#94F2A2";//verde
-         $cambiarAzul = true;
-      }
-      // esto es el codigo de cambio de color de numeros ++++++++++++++++++++++++++////////////////////
       
-      $idNumeroAzul = $idNumerosnumerosnumerosS[$n];
-      $idNumeroAzulPost = $idNumerosnumerosnumerosP[$n];
+      $v = e.target.value;// aqui capturo valor de boton en paginacion
+
+      if ($idColorAzul != e.target.id && $idColorAzul != null) {
+
+         document.getElementById($idColorAzul).style.backgroundColor="#84c2e6";//azul
+      
+      }
+      document.getElementById(e.target.id).style.backgroundColor="#94F2A2";//verde
+      $idColorAzul = e.target.id;
+
+      document.cookie = `pag = ${$v}`;
+      if ($colorActualizarS != null) {
+         $colorActualizarS = null;
+      }
+      
       $padre.innerHTML = "";
          
       $paginaActual = e.target.value;//la pagina actual esto lo uso en la otras funciones
@@ -297,15 +246,17 @@ function cambiarPagina(e){
    
 }
 function actualizarPaginacion(){
+   $idColorAzul = null;
    $pagS.innerHTML = "";
    $pagP.innerHTML = "";
+   $idNumerosPaginaS.slice(0,5);
+   $idNumerosPaginaP.slice(0,5);
 }
 function paginacion() {
-   
-   for (let i = $_a; i <= $_z; i++) {
+   $limiteDerecho = $zz;
+   $limiteIzquierdo = $aa;
 
-      $limiteIzquierdo = $_a;
-      $limiteDerecho = $_z;
+   for (let i = $aa; i <= $zz; i++) {
 
       var $pagSu = document.createElement('div');
       var $pagPo = document.createElement('div');
@@ -313,21 +264,16 @@ function paginacion() {
       $pagPo.innerHTML=i;
       $pagSu.id = "ps"+i;
       $pagPo.id = "pp"+i;
-      $idNumerosnumerosnumerosS[i]=$pagSu.id;
-      $idNumerosnumerosnumerosP[i]=$pagPo.id;
-      if ($paginaActual == 1 && i == 1) {
-         $pagSu.style.backgroundColor="#94F2A2";//verde
-         $pagPo.style.backgroundColor="#94F2A2";//verde
-      }
       $pagSu.value = i;
       $pagPo.value = i;
-      
+      $idNumerosPaginaS[i]=$pagSu.id;
+      $idNumerosPaginaP[i]=$pagPo.id;
       $pagS.appendChild($pagSu);
       $pagP.appendChild($pagPo);
+      
    }
-   
-   //console.log($idNumerosnumerosnumerosS);// arrays completados
-   //console.log($idNumerosnumerosnumerosP);
+   console.log($idNumerosPaginaS);
+   console.log($idNumerosPaginaP);
 
 }
 

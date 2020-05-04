@@ -21,7 +21,6 @@
 <button id="up" class="up"><i class="far fa-arrow-alt-circle-up"></i></button>
 
 </section>
-    <input type="hidden" name="">
 <script src="ajax/traerNoticias.js"></script>
 <script src="ajax/traerNoticiasAside.js"></script>
 <script src="js/index.view.js"></script>
