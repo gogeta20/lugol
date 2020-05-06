@@ -278,7 +278,7 @@ require 'headerNav.php';
 	<h2>Futbol Base</h2>
 	<div class="primeraFutbolBase">
 		<div class="imagenFB">
-			<img src="imagenes/prediseñada/pre1.png" id="imgPre">
+			<img src="imagenes/paraIndex/pre1.png" id="imgPre">
 		</div>
 		<div class="textoFB">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -308,16 +308,16 @@ require 'headerNav.php';
 	<h2>Empresas Colaboradoras</h2>
 	<div class="primeraEmpresas">
 		<div>
-			<img src="imagenes/prediseñada/cc.jpg" id="">
+			<img src="imagenes/paraIndex/cc.jpg" id="">
 		</div>
 		<div>
-			<img src="imagenes/prediseñada/nike.jpg" id="">
+			<img src="imagenes/paraIndex/nike.jpg" id="">
 		</div>
 		<div>
-			<img src="imagenes/prediseñada/ps.jpg" id="">
+			<img src="imagenes/paraIndex/ps.jpg" id="">
 		</div>
 		<div>
-			<img src="imagenes/prediseñada/xg.jpg" id="">
+			<img src="imagenes/paraIndex/xg.jpg" id="">
 		</div>
 	</div>
 </div>
