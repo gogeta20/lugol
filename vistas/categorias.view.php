@@ -13,8 +13,8 @@
   <div id="presentacionEquipos">
     
       <div id="bannerEquipos">
-        <h2>Encuentra equipo</h2>
-        <a href="marca.php"><p>la liga te espera ..</p></a>
+        <h2>Conoce a los equipos</h2>
+        <a href="marca.php"><p>unete al que mas te guste</p></a>
       </div>
 
       <div id="padreEquipos">
