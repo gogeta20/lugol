@@ -19,9 +19,9 @@
 
     <!--- paginacion  -->
       <div id="participaPaginacion">
-        <div id="participaIzq"><<</div>
-        <div id="participaNumPag">1</div>
-        <div id="participaDer">>></div>
+        <div id="participaIzq" class="boton"><<</div>
+        <div id="participaNumPag"></div>
+        <div id="participaDer" class="boton">>></div>
       </div>
     <!--- paginacion  -->
     <div id="muroEquiposParticipa">

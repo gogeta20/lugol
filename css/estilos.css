@@ -522,7 +522,7 @@ div#bannerEquipos{
 	}
 
 
-	#participaPaginacion div{
+	.boton{
 		background-color: #84c2e6;
 		border-radius: 5px;
 		border: 1px solid black;
@@ -532,15 +532,14 @@ div#bannerEquipos{
 		cursor: pointer;
 		transition: 0.4s;
 	}
-	#participaPaginacion div:hover{
+	.boton:hover{
 		transform: scale(1.04);
 		background-color: #599ec7;
 	}
-
-
-
-
-
+	#participaNumPag{
+		background-color: none;
+		display: flex;
+	}
 
 	#muroEquiposParticipa{
 		width: 100%;
