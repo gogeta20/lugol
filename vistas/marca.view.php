@@ -27,10 +27,8 @@
     <div id="muroEquiposParticipa">
 
     </div>
-
-
-
   </div>
+  <button id="up" class="up"><i class="far fa-arrow-alt-circle-up"></i></button>
 </section>
 <script src="ajax/participa.js"></script>  
 

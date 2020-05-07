@@ -23,8 +23,8 @@ objetoAjax.onload = function(){
                 </div>
                 <div class="divLema">
                   <p> ${$datos[i]['lema']}</p>
-                  <button>Conoce mas del equipo</button>
-                  <button>Unirme al equipo!!</button>
+                  <button>Conocer mas del equipo</button>
+                  <button>Unirme!!</button>
                 </div>
               </div>
             </div>

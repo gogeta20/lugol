@@ -36,8 +36,8 @@ if (isset($_SESSION['sesion'])) {
 				<a href="noticias.php">Noticias</a>
 				<a href="categorias.php">Equipos</a>
 				<a href="marca.php">Participa!!</a>
-				<a href="">Contacto</a>
-        <a href="login.php"><?= $nombre;?><i class="<?= $icono;?>"></i></a>
+        		<a href="login.php"><?= $nombre;?><i class="<?= $icono;?>"></i></a>
+				<!--<a href="">Contacto</a>-->
 			</nav>
 			<div class="busqueda">
 				<form name="busqueda" action="<?php RUTA; ?>buscar.php" method="get">

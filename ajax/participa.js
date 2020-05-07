@@ -1,5 +1,6 @@
 var objetoAjax = new XMLHttpRequest();
 var $datos;
+var $up = document.getElementById("up");
 // == paginacion
 var $totalAnuncios;
 var $numeroPaginas;
@@ -46,7 +47,9 @@ $paginacionNumeros.addEventListener('click',function(e) {
   cambiarNumeroPagina(e.target.value);//numero de pagina
 });
 
-
+$up.addEventListener('click',function (e) {
+  window.scrollTo(0, 0);
+});
 
 /// ============================================================== funciones *********
 /// ============================================================== funciones *********

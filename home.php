@@ -7,7 +7,7 @@ require 'funciones.php';
 if ($_SESSION['sesion']) {
   
   $id = $_SESSION['sesion'];
-  $conexion = conectarBD($baseDatosConfiguracion);
+  $conexion = conectarBD($BD);
   $sentencia = $conexion->prepare("select * from articulos where usuario = :user");
   $sentencia->execute(array(":user"=>$id));
   $resultado = $sentencia->fetchAll();

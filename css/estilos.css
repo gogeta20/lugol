@@ -804,25 +804,27 @@ a{
 	
 }
 
+
+/* ================================ login ==============================================*/
+/* ================================ login ==============================================*/
+/* ================================ login ==============================================*/
 .fondoLogin{
 	
-	background-image: url(../imagenes/fondo.jpeg);
+	background-image: url(../imagenes/fondo2.jpg);
 	background-size: cover;
 	width: 100%;
-	height: 100%;
+	height: 92%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	max-width: none;
 }
-
-
 .loginContenedor{
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
   justify-content: center;
-	width: 25vw;
-	height: 30vw;
+  width: 25vw;
+  height: 100vw;
 }
 
 .loginContenedor input, .editar2, editar3{
@@ -836,7 +838,7 @@ a{
 }
 
 .editar3{
-  min-width: 100%;
+	min-width: 100%;
   font-size: 22px;
   margin-bottom: 2%;
 }
@@ -855,7 +857,7 @@ input[value="entrar"]:hover{
 	
 }
 .datosIncorrectos{
-  margin: 10px 0px;
+	margin: 10px 0px;
   background-color: #f84451;
   color:black;
   text-align: center;
@@ -863,34 +865,63 @@ input[value="entrar"]:hover{
   border-radius: 5px;
   font-weight: bold;
 }
+/* ///////////////////////////////////// fin de login //////////////////////////////////*/
+/* ======================================home ===========================================*/
+/* ======================================home ===========================================*/
+/* ======================================home ===========================================*/
+#fondoHome{
+	background: url(../imagenes/home/jugador3.png);
+	background-position-y: 180px;
+	background-position-x: 980px;
+	background-repeat:no-repeat;
 
+}
 .usuario{
-  
-  background-color: #80c6d8;
-  border-radius: 5px;
-  padding: 10px;
-  
+	
+	background-color: #80c6d8;
+	border-radius: 5px;
+	padding: 10px;
+	
+}
+#cuerpoHome{
+	min-height: 100vh;
 }
 
 .usuario button{
-  
-  background-color: whitesmoke;
+  background-color: white;
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
+  border: 1px solid black;
 }
 
 .usuario button:hover{
-  
-  background-color: #94F2A2;
-  transform: scale(1.01);
+	
+	background-color: rgb(201, 243, 209);
+	border: 1px solid #000000;
+	-webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
 }
+#cuerpoHome{
+	width: 80%;
+}
+.bienvenida{
+	margin: 10px 0px;
+	background:linear-gradient(to right,rgba(0, 204, 255, 0.192) 35%,rgba(51, 255, 0, 0.226));
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 4px #999999;
+	min-height: 180px;
+	text-align: center;
+}
+
 
 .home{
 	width: 100%;
 	display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 article.oculto{
@@ -908,9 +939,12 @@ article.oculto{
 	background-color: #66ff99;
 	
 }
+/* ///////////////////////////////////// fin de Home //////////////////////////////////*/
+/* ///////////////////////////////////// fin de Home //////////////////////////////////*/
+/* ///////////////////////////////////// fin de Home //////////////////////////////////*/
 .recuadroCategoria{
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .recuadroCategoria div {

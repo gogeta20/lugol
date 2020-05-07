@@ -13,7 +13,7 @@ if (isset($_POST['entrar'])) {
 	$nick = $_POST['nick'];
 	$pass = $_POST['pass'];
 	
-	$conexion = conectarBD($baseDatosConfiguracion);
+	$conexion = conectarBD($BD);
 	
 	$sentencia = $conexion->prepare('select * from usuarios where nick = :nick and pass = :pass');
 	$sentencia->execute(array(':nick'=> $nick,':pass'=>$pass));
