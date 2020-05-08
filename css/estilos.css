@@ -1,11 +1,14 @@
 .verde{
 	color: #94F2A2;
 }
+.backVerde{
+	background-color: #94F2A2;
+}
 .azul{
 	color: #84c2e6;
 }
 .naranja{
-	color:#ff6666;
+	background-color:#ff6666;
 }
 .gris{
 	color:rgb(97, 94, 94);
@@ -595,22 +598,6 @@ div#bannerEquipos{
 		box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
@@ -813,21 +800,87 @@ a{
 	background-image: url(../imagenes/fondo2.jpg);
 	background-size: cover;
 	width: 100%;
-	height: 92%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	max-width: none;
 }
+
+
+
 .loginContenedor{
+	margin-top: 56px;
 	display: flex;
 	flex-direction: column;
-  justify-content: center;
-  width: 25vw;
-  height: 100vw;
+  	justify-content: center;
+  	width: 25vw;
+	  margin-bottom: 77vh;
+	  margin-top: 20vh;
+}
+.cajaRotar{
+	position: relative;
+	transform-style: preserve-3d;
+	transition: .7s ease;
+	
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
-.loginContenedor input, .editar2, editar3{
+.caja2{
+	transform: rotateY(180deg);
+}
+
+.caja1, .caja2{
+	position: absolute;
+	left: 0;
+	top: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.loginContenedor:hover .Rotar{
+	transform: rotateY(180deg);
+}
+.quedateRotado{
+	transform: rotateY(180deg);
+	position: relative;
+	transform-style: preserve-3d;
+	
+	
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.label{
+	display: inline-block;
+	width: 100%;
+	font-size: 1.2em;
+	color:white;
+	font-weight: bolder;
+}
+.label2{
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: .7em;
+}
+
+.registro{
+	background-color: #84c2e6f5;
+	padding: 1em;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+}
+/**/
+.registro button{
+	margin-top: 15px;
+	width: 50%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px black;
+	font-size: 19px;
+	color: black;
+}
+.loginContenedor input, .editar2, .editar3{
 	
 	width: 100%;
 	height: 30px;
@@ -837,33 +890,44 @@ a{
 	color: #323232;
 }
 
+
 .editar3{
 	min-width: 100%;
-  font-size: 22px;
-  margin-bottom: 2%;
+	font-size: 22px;
+	margin-bottom: 2%;
 }
-input[value="entrar"]{
-	
+.loginContenedor .loginBoton{
+	border: solid 1px black;
+	border-radius: 5px;
+	height: 30px;
 	width: 50%;
-	margin: 5% 25%;
+	margin: 5% 25% 2em;
 	font-size: 18px;
 	font-weight: bolder;
 	
 }
-input[value="entrar"]:hover{
+.loginBoton2 {
+	font-weight: bolder;
+	margin-bottom: 0;
+}
+.loginContenedor button:hover{
 	
-	background-color: #04BF45;
-	color: #fff;
+	color: black;
+	border: 1px solid #38a9f0;
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
 	
 }
+
 .datosIncorrectos{
 	margin: 10px 0px;
-  background-color: #f84451;
-  color:black;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  font-weight: bold;
+	background-color: #f84451;
+	color:black;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: bold;
 }
 /* ///////////////////////////////////// fin de login //////////////////////////////////*/
 /* ======================================home ===========================================*/
@@ -1037,9 +1101,7 @@ article.oculto{
 	margin-top: 5%;
 }
 /* ============ tabla de equipos =========*/
-.ptable{
-	
-}
+
 
 .ptable table, .pgoleadores table{
 	margin: 30px auto;

@@ -1,0 +1,38 @@
+.loginContenedor{
+	margin-top: 56px;
+	display: flex;
+	flex-direction: column;
+  	justify-content: center;
+  	width: 25vw;
+	  margin-bottom: 77vh;
+	  margin-top: 20vh;
+}
+.cajaRotar{
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 3s ease;
+	
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.caja2{
+	transform: rotateY(180deg);
+}
+.caja1, .caja2{
+	position: absolute;
+	left: 0;
+	top: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.loginContenedor:hover .cajaRotar{
+	transform: rotateY(180deg);
+}
+
+
+var $inputReg = document.getElementById("RegNombre");
+	$inputReg.addEventListener('click',function(){
+		//document.getElementById("cajaRotar").className="caja";
+		$cajaRotar.classList.remove="cajaRotar Rotar";
+		//$cajaRotar.className="cajaRotar2";
+	});
