@@ -904,7 +904,8 @@ input[value="entrar"]:hover{
 	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
 }
 #cuerpoHome{
-	width: 80%;
+	width: 95%;
+	margin: auto;
 }
 .bienvenida{
 	margin: 10px 0px;
@@ -915,8 +916,25 @@ input[value="entrar"]:hover{
 	min-height: 180px;
 	text-align: center;
 }
-
-
+.bienvenida h3{
+	font-size: 2em;
+}
+.bienvenida p{
+	font-size: 1.2em;
+}
+.bienvenidaCarteles{
+	display: flex;
+	flex-wrap: wrap;
+}
+.cartel{
+	width: 49%;
+	margin: 10px 5px;
+	background: rgba(255, 255, 255, 0.918);
+	border-radius: 10px;
+	box-shadow: 0px 0px 4px #999999;
+	min-height: 180px;
+	text-align: center;
+}
 .home{
 	width: 100%;
 	display: flex;
@@ -1019,6 +1037,10 @@ article.oculto{
 	margin-top: 5%;
 }
 /* ============ tabla de equipos =========*/
+.ptable{
+	
+}
+
 .ptable table, .pgoleadores table{
 	margin: 30px auto;
 	border-collapse: collapse;

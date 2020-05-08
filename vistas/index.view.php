@@ -126,6 +126,7 @@ require 'headerNav.php';
 						</tr>
 					</table>
 </div>
+
 <div class="pcalendario">
   <h1 class="headin">Proxima Fecha</h1>
 					<table>
