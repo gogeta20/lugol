@@ -2,7 +2,7 @@
 <div id="fondoHome">
 <section id="sectionHome"> 
   <div class="usuario">
-    <h1 class="tituloHome"><?php echo $resultado2['nombre'] . " " . $resultado2['apellidos']; ?></h1>
+    <h1 class="tituloHome"><?php echo $nombreUsuario ?></h1>
     <a href=""> <button>mi equipo</button> </a>
     <a href=""> <button>buzon</button> </a>
     <a href=""> <button>calendario</button> </a>

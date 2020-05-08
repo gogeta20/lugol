@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['sesion'])) {
+if (isset($_SESSION['sesionNombre'])) {
   header('Location: home.php');
 }
 
@@ -20,14 +20,28 @@ if (isset($_POST['entrar'])) {
 	$resultados = $sentencia->fetch();
   
   if ($resultados) {
-    $_SESSION['sesion']=$resultados['id'];
-    $_SESSION['sesionNombre']=$resultados['nombre'];
+    $_SESSION['sesionNombre']=$resultados['nick'];
     header('Location:home.php'); 
   }else{
     $mensaje = "datos incorrectos";
   }
 }
 
+if (isset($_POST['nuevoUsuario'])) {
+    $regNombre = $_POST['RegNick'];
+    $regPass = $_POST['RegPass'];
+    $regEmail = $_POST['RegEmail'];
+
+    $conex = conectarBD($BD);
+    //insert into usuarios values(null,'mauricio','vargas','linux','linux@lite.com','cmauricio2');
+    $sentencia =$conex->prepare("insert into usuarios values(null,:n,:e,:p)");
+    $sentencia->execute(array(':n'=>$regNombre,':e'=>$regEmail,':p'=>$regPass));
+    if ($sentencia) {
+      $_SESSION['sesionNombre']=$regNombre;
+      header('Location:home.php');
+    }
+
+}
 
 
 require 'vistas/login.view.php';

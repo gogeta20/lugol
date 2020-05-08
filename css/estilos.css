@@ -807,7 +807,7 @@ a{
 }
 
 
-
+/* flip */ 
 .loginContenedor{
 	margin-top: 56px;
 	display: flex;
@@ -837,8 +837,11 @@ a{
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 }
-.loginContenedor:hover .Rotar{
+.Rotar{
 	transform: rotateY(180deg);
+}
+.volver{
+	transform: rotateY(0deg);
 }
 .quedateRotado{
 	transform: rotateY(180deg);
@@ -849,7 +852,7 @@ a{
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 }
-
+/*  fin del flip */ 
 .label{
 	display: inline-block;
 	width: 100%;
@@ -864,7 +867,7 @@ a{
 }
 
 .registro{
-	background-color: #84c2e6f5;
+	background-color: #84c2e6dc;
 	padding: 1em;
 	border-radius: 5px;
 	text-align: center;
@@ -910,20 +913,33 @@ a{
 	font-weight: bolder;
 	margin-bottom: 0;
 }
+.colorVolverLogin{
+	
+	background:linear-gradient(to right,rgba(216, 54, 54, 0.705) 15%,rgba(78, 2, 2, 0.692));
+	color: white;
+}
 .loginContenedor button:hover{
 	
-	color: black;
+	
 	border: 1px solid #38a9f0;
 	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
 	
 }
+.loginContenedor .loginBoton:hover{
+	
+	border: 1px solid #38a9f0;
+	-webkit-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	-moz-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	
+}
 
 .datosIncorrectos{
 	margin: 10px 0px;
-	background-color: #f84451;
-	color:black;
+	background:linear-gradient(to right,rgba(216, 54, 54, 0.705) 15%,rgba(78, 2, 2, 0.692));
+	color:white;
 	text-align: center;
 	padding: 5px;
 	border-radius: 5px;

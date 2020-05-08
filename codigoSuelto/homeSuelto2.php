@@ -4,10 +4,10 @@ require 'admin/config.php';
 require 'funciones.php';
 
 
-if (isset($_SESSION['sesionNombre'])) {
+if ($_SESSION['sesion']) {
   
-  $nombreUsuario = $_SESSION['sesionNombre'];
-  /*$conexion = conectarBD($BD);
+  $id = $_SESSION['sesion'];
+  $conexion = conectarBD($BD);
   $sentencia = $conexion->prepare("select * from articulos where usuario = :user");
   $sentencia->execute(array(":user"=>$id));
   $resultado = $sentencia->fetchAll();
@@ -16,7 +16,7 @@ if (isset($_SESSION['sesionNombre'])) {
   $sentencia2->execute(array(":id" => $id));
   $resultado2 = $sentencia2->fetch();
 	$ruta = "home";
-	$resultado3 = traer_articulosUser($id, $configPagina['post_por_pagina'], $conexion);*/
+	$resultado3 = traer_articulosUser($id, $configPagina['post_por_pagina'], $conexion);
 }
 
 
