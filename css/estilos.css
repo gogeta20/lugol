@@ -240,10 +240,7 @@ section{
 	font-size: 1.2em;
 	transition: 0.6s;
 }
-.articleNoticiasTitulo:hover{
-	transform: scale(1.01);
-	color: #037c17;
-}	
+
 .noticiasFecha{
 	margin: 10px 0;
 }
@@ -1038,8 +1035,71 @@ article.oculto{
 	
 }
 /* ///////////////////////////////////// fin de Home //////////////////////////////////*/
-/* ///////////////////////////////////// fin de Home //////////////////////////////////*/
-/* ///////////////////////////////////// fin de Home //////////////////////////////////*/
+/* =======================================resultados ==================================*/
+/* =======================================resultados ==================================*/
+/* =======================================resultados ==================================*/
+
+.indexCrearEquipo{
+	width: 80%;
+	height: 450px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 2em;
+}
+.wanted{
+	background-color: white;
+}
+.indexWanted{
+	width: 80%;
+	height: 450px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	padding: 2em 0;
+}
+.indexImgCrea{
+	background: url(../imagenes/resultados/tactica.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 40%;
+	height: 400px;
+}
+.indexWantedImg{
+	background: url(../imagenes/paraIndex/mystery-man2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 30%;
+	height: 300px;
+}
+.indexTextoCrea{
+	width: 60%;
+	padding: 2% 2% 0;
+}
+.indexTextoCrea p{
+	margin-bottom: .8em;
+}
+.botonResultados{
+	
+	cursor: pointer;
+	padding: 5px 12px;
+	margin: 7px 0px;
+	background-color: #aed6f1;
+	color: #333333;
+	font-size: 16px;
+	border: solid 1px #999999;
+	border-radius: 3px;
+}
+.botonResultados:hover{
+
+	
+	border: 1px solid #38a9f0;
+	-webkit-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	-moz-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+}
+
+/* ///////////////////////////////////// fin de resultados //////////////////////////////////*/
 .recuadroCategoria{
 	display: flex;
 	justify-content: space-around;
@@ -1117,7 +1177,10 @@ article.oculto{
 	margin-top: 5%;
 }
 /* ============ tabla de equipos =========*/
+.pc{
+	margin-top: 56px;
 
+}
 
 .ptable table, .pgoleadores table{
 	margin: 30px auto;
@@ -1174,7 +1237,10 @@ th{
 .wpos td{
 	color: #0b700b;
 }
-
+.lineaCalendario{
+	background-color: #84c2e6;
+	text-align: center;
+}
 .pos{
 	text-align: center;
 }

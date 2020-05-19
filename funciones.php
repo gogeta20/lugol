@@ -1,20 +1,18 @@
 <?php
 
-function conectarBD($baseDatosConfiguracion) {
+function conectarBD($BD) {
   try {
-    $conexion = new PDO('mysql:host=localhost;dbname=' . $baseDatosConfiguracion['baseDatos']
-            , $baseDatosConfiguracion['user']
-            , $baseDatosConfiguracion['pass']);
+    $conexion = new PDO('mysql:host=localhost;dbname=' . $BD['baseDatos'], $BD['user'], $BD['pass']);
 
     return $conexion;
   } catch (PDOException $e) {
     return $conexion = false;
   }
 }
-function conectarMYSQLI($baseDatosConfiguracion) {
+function conectarMYSQLI($BD) {
 
   $conexion = new mysqli();
-  $conexion->connect('localhost', $baseDatosConfiguracion['user'], $baseDatosConfiguracion['pass'], $baseDatosConfiguracion['baseDatos']);
+  $conexion->connect('localhost', $BD['user'], $BD['pass'], $BD['baseDatos']);
   $error = $conexion->connect_errno;
   if ($error != null) {
     $conexion = false;
@@ -114,7 +112,7 @@ function totalArticulosCategoria($conexion, $id) {
 
 function verificarId($id, $conexion) {
 
-  $sentencia = $conexion->query("select * from articulos where id = $id limit 1");
+  $sentencia = $conexion->query("select * from noticias where id = $id limit 1");
   $sentencia = $sentencia->fetch();
 //	var_dump($sentencia);
   return ($sentencia) ? $sentencia : false;

@@ -5,7 +5,7 @@ require 'vistas/headerNav.php';
 if (isset($_GET['r'])) {
 	$volver = $_GET['r'];
 }else{
-	$volver = "index";
+	$volver = "noticias";
 }
 
 if (isset($_GET['p'])) {
@@ -39,11 +39,11 @@ $articulo = verificarId($_GET['id'],$conexion);?>
 		<p class="fecha"><?php echo formatearFecha($articulo['fecha']);?></p>
 			<div class="divDosImagen">
 				<div>
-						<img class="imagenArticuloPrincipal" src="<?php echo RUTA; ?>imagenes/<?php echo $articulo['imagen'];?>" alt="">
+						<img class="imagenArticuloPrincipal" src="<?php echo RUTA; ?>imagenes/noticias/noticiasPrincipal/<?php echo $articulo['imagen'];?>" alt="">
 				</div>
 			</div>
 			<div>
-				<p><?php echo $articulo['descripcion'];?></p>	
+				<p><?php echo $articulo['texto'];?></p>	
 				<a href="<?php echo RUTA.$volver?>.php?p=<?php echo $pagina;?>"><button type="button">volver</button></a>
 			</div>
 	</article>

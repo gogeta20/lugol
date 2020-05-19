@@ -89,7 +89,7 @@ function traer($inicio, $fin){
             <img src="${rutaImagenes+datos[i]['miniatura']}" alt="imagen">
          </div>
          <div class="z2">
-            <a href="articuloPrincipal.php?id=${datos[i]['id']}"><h2 class="articleNoticiasTitulo titulo">${datos[i]['titulo']}</h2></a>
+            <h2 class="articleNoticiasTitulo titulo">${datos[i]['titulo']}</h2>
             <div class="noticiasFecha">${$fecha}</div>
             <div class="dc">
 
@@ -375,7 +375,7 @@ $section.addEventListener('click',function(e){
             <img src="${rutaImagenes+datos[$posicion]['miniatura']}" alt="imagen">
          </div>
          <div class="z2">
-            <a href="articuloPrincipal.php?id=${datos[$posicion]['id']}"><h2 class="articleNoticiasTitulo titulo">${datos[$posicion]['titulo']} </h2></a>
+            <h2 class="articleNoticiasTitulo titulo">${datos[$posicion]['titulo']} </h2>
             <div class="noticiasFecha"> ${$fecha}</div>
             <div class="dc">
 
@@ -399,7 +399,7 @@ $section.addEventListener('click',function(e){
             `
             
             <div class="z3">
-               <a href="articuloPrincipal.php?id=${datos[$posicion]['id']}"><h2 class="articleNoticiasTitulo titulo">${datos[$posicion]['titulo']} </h2></a>
+               <h2 class="articleNoticiasTitulo titulo">${datos[$posicion]['titulo']} </h2>
                <div class="noticiasFecha"> ${$fecha}</div>
                <div class="dc">
 

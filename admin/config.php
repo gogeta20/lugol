@@ -1,6 +1,6 @@
 <?php
 
-define('RUTA','http://localhost/P1/');//casa
+define('RUTA','http://localhost/gh/lugol/');//casa
 //define('RUTA','http://localhost:10001/mauricio/P1/');//clase
 
 $BD = [
