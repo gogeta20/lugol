@@ -26,4 +26,4 @@
 
 </section>  
 <script src="ajax/equipos.js"></script>
-<?php require 'footer.php'?>
+<?php require 'footer.php'; ?>

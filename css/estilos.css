@@ -732,7 +732,7 @@ article div button:hover, .volverError:hover,input[value="entrar"]:hover, .usuar
 
 .footerMau{
 	width: 100%;
-	margin: 1% auto 0;
+	margin: 0 auto 0;
 	background-color: rgb(27, 27, 27);
 	display: flex;
 	flex-direction: column;
@@ -1107,13 +1107,96 @@ article.oculto{
 /* ===================================== presentacion Equipos ===============================*/
 
 #fondoPreEquipo{
-	background: url(../imagenes/presentacionEquipos/fondoPresentacionEquipos.png);
+	background: url(../imagenes/presentacionEquipos/fondoEquipo2.jpg);
+	/*background: linear-gradient(to right,#ebebeb 1%, rgb(194, 237, 245),#ebebeb 99%);*/
 	background-repeat: no-repeat;
-	background-position-y: 280px;
-	background-position-x: 780px;
+	/*background-position-y: 380px;
+	background-position-x: 980px;
+	background-position-y: 100%;
+	background-position-x: 120%;*/
+	background-size: cover;
 }
 
+.escudoEquipo{
+	/*background: radial-gradient(to right,transparent 1%, rgb(194, 237, 245),#ebebeb 99%);*/
+	/*background: radial-gradient(circle, rgba(178, 243, 187, 0.459) 45%,transparent);*/
 
+}
+.cabezeraEquipo{
+	display: flex;
+	padding: 1.5em 0;
+}
+.datosEquipo{
+	width: 80%;
+	margin: auto ;
+	font-family: "Oswald", Arial, Sans-serif;
+}
+.datosEquipo h2, .datosEquipo h3{
+	text-align: center;
+}
+.datosEquipo h3{
+	border-bottom: solid 2px black;
+}
+.titulosEquipo{
+	display: flex;
+	justify-content: space-between;
+}
+.botoneraEquipo{
+	display: flex;
+	flex-direction: column;
+}
+.imagenPresentacionEquipo{
+	border-radius: 10%;
+	box-shadow: 7px 7px 7px #7c7c7c;
+}
+.integrantesEquipo{
+	display: flex;
+	flex-direction: column;
+}
+.integrantesEquipo span{
+	margin: 3px 0;
+}
+.integrantesEquipo h3{
+	border-bottom: solid 1px black;
+	text-align: center;
+}
+.cuerpoEquipo{
+	display: flex;
+	justify-content: space-evenly;
+	padding-bottom: 3em;
+	border-bottom: black solid 3px;
+}
+.galeriaEquipo{
+	/*background:linear-gradient(to right,rgba(0, 204, 255, 0.192) 35%,rgba(51, 255, 0, 0.226));*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2em;
+}
+.carruselEquipo{
+	display: flex;
+}
+.flechas{
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	font-size: 4em;
+}
+
+.flechas i{
+	cursor: pointer;
+}
+
+#imagen{
+	min-width: 700px;
+	max-width: 700px;
+	min-height: 470px;
+	max-height: 470px;
+	border-radius: 5%;
+}
+#fi{
+	color: white;
+}
 
 /* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
 .recuadroCategoria{
