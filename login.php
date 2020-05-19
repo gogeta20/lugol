@@ -21,6 +21,7 @@ if (isset($_POST['entrar'])) {
   
   if ($resultados) {
     $_SESSION['sesionNombre']=$resultados['nick'];
+    $_SESSION['sesionId']=$resultados['id'];
     header('Location:home.php'); 
   }else{
     $mensaje = "datos incorrectos";

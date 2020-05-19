@@ -3,10 +3,8 @@ session_start();
 require 'admin/config.php';
 require 'funciones.php';
 
-if (isset($_SESSION['sesion'])) {
-  $nombre = $_SESSION['sesionNombre'];
-}else{
-  $nombre = "Login";
+if (!isset($_SESSION['sesionNombre'])) {
+  header('Location:login.php');
 }
 
 $conexion = conectarBD($BD);

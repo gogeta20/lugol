@@ -1,6 +1,11 @@
 <?php
+session_start();
 require 'funciones.php';
 require 'admin/config.php';
+
+if (!isset($_SESSION['sesionNombre'])) {
+	header('Location:login.php');
+}
 /*
 $conexion = conectarBD($baseDatosConfiguracion);
 if (!$conexion) {

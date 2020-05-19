@@ -1,4 +1,5 @@
 var $id = document.getElementById('id').value;
+var $idUser = document.getElementById('idUser').value;
 var ruta = "imagenes/presentacionEquipos/";
 
 var objetoAjax = new XMLHttpRequest();
@@ -8,6 +9,9 @@ var $mover = 0;
 var $flechaIzquierda = document.getElementById("fi");
 var $flechaDerecha = document.getElementById("fd");
 var $imagen = document.getElementById('imagen');
+var $mensajeConfirmado = document.getElementById("mensajeConfirmado");
+var $mensajeAnulado = document.getElementById("mensajeAnulado");
+
 
 objetoAjax.open("POST","ajax/presentacionEquipo.php?idEquipo="+$id);
 objetoAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -20,6 +24,7 @@ objetoAjax.onload = function(){
 }
 objetoAjax.send();
 
+// ============== eventos =============================
 
 $flechaIzquierda.addEventListener('click',function(){
     if ($mover > 0) {
@@ -27,7 +32,7 @@ $flechaIzquierda.addEventListener('click',function(){
         $imagen.src=ruta+$datos[$mover]['nombreImagen'];
     }
     if ($mover == 0) {
-        $flechaIzquierda.style.color = "white";
+        $flechaIzquierda.style.color = "#7c7c7c38";
     }else{
         $flechaDerecha.style.color = "black";
     }
@@ -39,8 +44,28 @@ $flechaDerecha.addEventListener('click',function(){
         $imagen.src=ruta+$datos[$mover]['nombreImagen'];
     }
     if ($mover == $numeroFotos) {
-        $flechaDerecha.style.color = "white";
+        $flechaDerecha.style.color = "#7c7c7c38";
     }else{
         $flechaIzquierda.style.color = "black";
     }
+});
+
+$mensajeConfirmado.addEventListener('click',function(){
+    document.getElementById("checkEfecto").checked =  false;
+
+    var objetoAjaxEnviar =  new XMLHttpRequest();
+    objetoAjaxEnviar.open("POST","ajax/presentacionEquipoMensaje.php");
+    objetoAjaxEnviar.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    var $mensaje = document.getElementById("areaMensaje").value;
+    var $parametros = "mensaje="+$mensaje+"&idEquipo="+$id+"&idUser="+$idUser;
+
+    document.getElementById("areaMensaje").value = "";
+    objetoAjaxEnviar.send($parametros);
+});
+
+
+$mensajeAnulado.addEventListener('click',function(){
+    document.getElementById("checkEfecto").checked =  false;
+    document.getElementById("areaMensaje").value = "";
 });

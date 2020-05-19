@@ -51,6 +51,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none; 
+	overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -409,8 +410,8 @@ section{
 }
 .equipo{
 	margin: 20px 0px;
-	/*background-color: white;*/
-	background:linear-gradient(to right, rgba(51, 255, 0, 0.075) 12%, rgba(0, 204, 255, 0.034));
+	background-color: white;
+	/*background:linear-gradient(to right, rgba(51, 255, 0, 0.075) 12%, rgba(0, 204, 255, 0.034));*/
 	
 	padding: 20px;
 	border: solid 1px black;
@@ -1136,6 +1137,7 @@ article.oculto{
 }
 .datosEquipo h3{
 	border-bottom: solid 2px black;
+	padding-bottom: 1em;
 }
 .titulosEquipo{
 	display: flex;
@@ -1148,6 +1150,10 @@ article.oculto{
 .imagenPresentacionEquipo{
 	border-radius: 10%;
 	box-shadow: 7px 7px 7px #7c7c7c;
+	min-width: 850px;
+	max-width: 850px;
+	min-height: 520px;
+	max-height: 520px;
 }
 .integrantesEquipo{
 	display: flex;
@@ -1166,6 +1172,16 @@ article.oculto{
 	padding-bottom: 3em;
 	border-bottom: black solid 3px;
 }
+.textoPresentacionEquipo{
+	width: 80%;
+	margin: 2em auto;
+}
+
+
+
+
+
+
 .galeriaEquipo{
 	/*background:linear-gradient(to right,rgba(0, 204, 255, 0.192) 35%,rgba(51, 255, 0, 0.226));*/
 	display: flex;
@@ -1195,9 +1211,57 @@ article.oculto{
 	border-radius: 5%;
 }
 #fi{
-	color: white;
+	color: #7c7c7c38;
+}
+.check{
+	display: none;
+}
+.menu{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	background-color: #84c2e6;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 5px 10px 5px 0px;
+	box-shadow: 2px 2px 2px #999999;
+	cursor: pointer;
+	transition: 0.4s;
+	text-align: center;
+}
+.no{
+	background-color: #ff6666;
+}
+.menu:hover{
+	transform: scale(1.04);
+	background-color: #599ec7;
+}
+.no:hover{
+	transform: scale(1.04);
+	background-color:  #ff6666;
+}
+.mensajeBotones{
+	display: flex;
+	justify-content: flex-end;
 }
 
+/*alf Gr + 4  ~*/
+.check:checked ~ .enviarMensajeEquipo{
+	right: 5px;
+}
+.enviarMensajeEquipo{
+	position: absolute;
+	right: -450px;
+	display: flex;
+	flex-direction: column;
+	transition: right 0.7s;
+}
+
+
+
+/* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
+/* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
+/* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
 /* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
 .recuadroCategoria{
 	display: flex;

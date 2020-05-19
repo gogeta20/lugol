@@ -33,8 +33,8 @@ if (isset($_SESSION['sesionNombre'])) {
 		<header class="barraSuperior">
       <h1 class="tituloPagina"> <a href="index.php">Futbol Lugo</a></h1>
 			<nav>
-				<a href="noticias.php">Noticias</a>
 				<a href="resultados.php">Resultados</a>
+				<a href="noticias.php">Noticias</a>
 				<a href="categorias.php">Equipos</a>
 				<a href="marca.php">Participa!!</a>
         		<a href="login.php"><?= $nombre;?><i class="<?= $icono;?>"></i></a>
