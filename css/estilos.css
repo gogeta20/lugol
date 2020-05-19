@@ -408,11 +408,14 @@ section{
 	width: 100%;
 }
 .equipo{
-	margin: 10px 0px;
-	background-color: white;
+	margin: 20px 0px;
+	/*background-color: white;*/
+	background:linear-gradient(to right, rgba(51, 255, 0, 0.075) 12%, rgba(0, 204, 255, 0.034));
+	
 	padding: 20px;
+	border: solid 1px black;
 	border-radius: 10px;
-	box-shadow: 2px 2px 2px #999999;
+	box-shadow: 4px 4px 4px #999999;
 	min-height: 180px;
 }
 .divEquipo{
@@ -422,7 +425,6 @@ section{
 	width: 60%;
 	display: flex;
 	justify-content: center;
-	
 	max-height: 400px;
 	margin: 0 1em;
 }
@@ -1100,6 +1102,20 @@ article.oculto{
 }
 
 /* ///////////////////////////////////// fin de resultados //////////////////////////////////*/
+/* ===================================== presentacion Equipos ===============================*/
+/* ===================================== presentacion Equipos ===============================*/
+/* ===================================== presentacion Equipos ===============================*/
+
+#fondoPreEquipo{
+	background: url(../imagenes/presentacionEquipos/fondoPresentacionEquipos.png);
+	background-repeat: no-repeat;
+	background-position-y: 280px;
+	background-position-x: 780px;
+}
+
+
+
+/* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/
 .recuadroCategoria{
 	display: flex;
 	justify-content: space-around;

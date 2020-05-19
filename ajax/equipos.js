@@ -23,15 +23,14 @@ objetoAjax.onload = function(){
                 </div>
                 <div class="divLema">
                   <p> ${$datos[i]['lema']}</p>
-                  <button>Conocer mas del equipo</button>
-                  <button>Unirme!!</button>
+                  <a href="presentacionEquipo.php?id=${$datos[i]['id']}"><button>Conocer mas del equipo</button></a>
                 </div>
               </div>
             </div>
         `;
         $lista.innerHTML+=
         `
-        <a href="#"><li><i class="fas fa-futbol"></i>${$datos[i]['nombre']}</li></a>
+        <a href="presentacionEquipo.php?id=${$datos[i]['id']}"><li><i class="fas fa-futbol"></i>${$datos[i]['nombre']}</li></a>
         `;
         $listaUl.appendChild($lista);
         $equiposDiv.appendChild($equipo);
