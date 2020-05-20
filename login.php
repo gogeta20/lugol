@@ -35,11 +35,11 @@ if (isset($_POST['nuevoUsuario'])) {
 
     $conex = conectarBD($BD);
     //insert into usuarios values(null,'mauricio','vargas','linux','linux@lite.com','cmauricio2');
-    $sentencia =$conex->prepare("insert into usuarios values(null,:n,:e,:p)");
+    $sentencia =$conex->prepare("insert into usuarios values(null,:n,:e,:p,null)");
     $sentencia->execute(array(':n'=>$regNombre,':e'=>$regEmail,':p'=>$regPass));
     if ($sentencia) {
       $_SESSION['sesionNombre']=$regNombre;
-      header('Location:home.php');
+      header('Location:home.php?new=ok');
     }
 
 }

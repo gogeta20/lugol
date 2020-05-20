@@ -10,45 +10,52 @@
     <a href="cerrar.php"><button>cerrar sesion</button> </a>
   </div>
 	<div id="cuerpoHome">
-		<div class="bienvenida">
-			<h3>Bienvenido Mauricio</h3>
-			<p>ahora que ya eres de los nuestros</p>
-			<p>tenemos que encontrar equipo</p>
-			<p>conoce a nuestros equipos</p>
-			<p>y unete al que mas te guste</p>
-			<p>o puedes comenzar tu propio equipo</p>
-		</div>
-		<div class="bienvenidaCarteles">
+		<?php
+			if ($presentarBienvenida) {
+				echo $bienvenida;		
+			}
+		?>
+		<?php if(isset($presi)){ ?>
+
+			<div class="bienvenida">
+				<h3>Bienvenido <?php echo $nombreUsuario ?></h3>
+				<p>mensajes <?= count($mensajes)?></p>
+				<p>solicitudes <?= count($solicitudes)?></p>
+				<p>respuestas de anuncios <?= count($respuestasAnuncios)?></p>
+			</div>
+			<div class="bienvenidaCarteles">
 			<a href="" class="cartel">
 				<div>
-					<h3>Mira la lista de equipos</h3>
-					<p>conoce donde estan sus sedes</p>
-					<p>sus horios de entrenamiento</p>
-					<p>mira su pocision en la liga</p>
+				<h3>Siguiente Partido</h3>
+				<p><?php echo $partidos[0]['equipoL']?></p>
+				<p>vs</p>
+				<p><?php echo $partidos[0]['equipoV']?></p>
 				</div>
 			</a>
 			<a href="" class="cartel">
 				<div>
-					<h3>Crea un equipo nuevo</h3>
-					<p>trae a tus amigos</p>
-					<p>puedes publicar un anuncio</p>
-					<p>para encontrar nuevos jugadores</p>
+					<h3>Posicion en la tabla <?php echo $posicionTabla?>ro</h3>
+					<p>puntos <?php echo $puntos?></p>
+					<p>ganados <?php echo $ganados?></p>
+					<p>perdidos <?php echo $perdidos?></p>
+					<p>empatados <?php echo $empatados?></p>
 				</div>
 			</a>
 			<div class="cartel">
-				<h3>Atento a los resultados</h3>
-				<p>puedes seguir en vivo el partido</p>
-				<p>ver los resultados y estadisticas</p>
-				<p>deja tus comentarios</p>
+				<h3>ultimo mensaje</h3>
+				<p>del Usuario: <?php echo $mensajes[count($mensajes)-1]['nombre']?></p>
+				<p><?php echo $mensajes[count($mensajes)-1]['mensaje']?></p>
 			</div>
 			<div class="cartel">
-				<h3>La Liga - noticias</h3>
-				<p>publicaremos todo relacionado</p>
-				<p>a horarios, incidencias, inscripciones</p>
-				<p>y todo lo referente a la liga</p>
-				<p>en la seccion noticias</p>
+				<h3>ultimas Solicitudes</h3>
+				<?php 
+					for ($i=0; $i < count($solicitudes); $i++) { 
+						echo '<p>- '.$solicitudes[$i]['nombre'].'</p>';
+					}
+				?>
 			</div>
 		</div>
+		<?php }?>
 	</div>
 </section>
 </div>
