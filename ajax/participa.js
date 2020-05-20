@@ -1,5 +1,7 @@
+var $idUsuario = document.getElementById("idUser").value;
 var objetoAjax = new XMLHttpRequest();
 var $datos;
+var $seleccionado = new Array();
 var $up = document.getElementById("up");
 // == paginacion
 var $totalAnuncios;
@@ -30,7 +32,8 @@ objetoAjax.onload = function(){
 
     document.getElementById("n"+$paginaActual).style.backgroundColor="#94F2A2";//verde
 }
-objetoAjax.send();
+var param = 'idUser='+Number.parseInt($idUsuario);
+objetoAjax.send(param);
 
 /// ============================================================== eventos *********
 /// ============================================================== eventos *********
@@ -50,6 +53,8 @@ $paginacionNumeros.addEventListener('click',function(e) {
 $up.addEventListener('click',function (e) {
   window.scrollTo(0, 0);
 });
+
+
 
 /// ============================================================== funciones *********
 /// ============================================================== funciones *********
@@ -110,22 +115,44 @@ function traer($inicio,$fin) {
   for (let i = $inicio; i < $fin; i++) {
     var $div = document.createElement('div');
     $div.className = "solicitudEquipo";
-    $div.innerHTML += 
-    `
-    <div>
-      <h3>${$datos[i]['name']}</h3>
+    $datoBuscar= "anu"+$datos[i]['idAnuncio'];
+     
+    if($seleccionado.includes($datoBuscar)){
+      $div.innerHTML += 
+      `
       <div>
-        <img src="imagenes/equipos/escudos/${$datos[i]['escudo']}" alt="escudoClub">
+        <h3>${$datos[i]['name']}</h3>
+        <div>
+          <img src="imagenes/equipos/escudos/${$datos[i]['escudo']}" alt="escudoClub">
+        </div>
       </div>
-    </div>
-    <div class="solicitudDescripcion">
-      <p>${$datos[i]['texto']}</p>
-      <div class="botonApuntarseEquipos">
-        <button>apuntarse</button>
+      <div class="solicitudDescripcion">
+        <p>${$datos[i]['texto']}</p>
+        <div class="botonApuntarseEquipos">
+        </div>
       </div>
-    </div>
-    `;
-    $padreSolitudEquipo.appendChild($div);
+      `;
+      $padreSolitudEquipo.appendChild($div);
+    }else{
+      $div.innerHTML += 
+      `
+      <div>
+        <h3>${$datos[i]['name']}</h3>
+        <div>
+          <img src="imagenes/equipos/escudos/${$datos[i]['escudo']}" alt="escudoClub">
+        </div>
+      </div>
+      <div class="solicitudDescripcion">
+        <p>${$datos[i]['texto']}</p>
+        <div class="botonApuntarseEquipos">
+          <button id="anu${$datos[i]['idAnuncio']}" value="${i}">apuntarse</button>
+        </div>
+      </div>
+      `;
+      $padreSolitudEquipo.appendChild($div);
+    }
+
+   
   }
 }//}}}}}}}}}}}}}}
 
@@ -135,3 +162,33 @@ function focus(){
   document.getElementById("n"+$paginaActual).style.backgroundColor="#94F2A2";//verde
 
 }
+
+// ================== click en el boton apuntarse =====================
+
+$padreSolitudEquipo.addEventListener('click',function(e){
+  var $v = e.target.id;
+  var $booleano = $v.includes("anu");
+
+  if ($booleano) {
+    var $anuncioActivado = document.getElementById($v);
+    
+    var $idAnuncio = $v.substr(3,1);
+    var $idUser = document.getElementById("idUser").value;
+    var objetoAjaxAnuncioOk = new XMLHttpRequest();
+
+    objetoAjaxAnuncioOk.open("POST","ajax/anuncioOk.php");
+    objetoAjaxAnuncioOk.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+    var $parametrosAnuncios = 'idAnuncio='+$idAnuncio+'&idUser='+$idUser;
+
+    objetoAjaxAnuncioOk.send($parametrosAnuncios);
+
+    $anuncioActivado.innerHTML = "registrado <i class='fas fa-check-circle'></i>";
+    $anuncioActivado.disabled = true;
+    $anuncioActivado.className = "solicitudDescripcionOk";
+    $seleccionado.push($v);
+    console.log($seleccionado);
+  }
+
+});
+

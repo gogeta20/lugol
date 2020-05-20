@@ -30,6 +30,7 @@
   </div>
   <button id="up" class="up"><i class="far fa-arrow-alt-circle-up"></i></button>
 </section>
+<input type="hidden" id="idUser" value="<?= $idUser?>">
 <script src="ajax/participa.js"></script>  
 
 <?php 

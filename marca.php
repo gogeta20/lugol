@@ -6,6 +6,16 @@ require 'admin/config.php';
 if (!isset($_SESSION['sesionNombre'])) {
 	header('Location:login.php');
 }
+
+$idUser = $_SESSION['sesionId'];
+
+$conexion = conectarBD($BD);
+
+$sentencia = $conexion->prepare("select idAnuncio from anunciosrespuestas where idUser =".$idUser);
+$sentencia->execute();
+$respuesta = $sentencia->fetchAll();
+
+
 /*
 $conexion = conectarBD($baseDatosConfiguracion);
 if (!$conexion) {

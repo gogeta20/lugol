@@ -17,10 +17,12 @@
                     </div>
                     
                     <div class="botoneraEquipo">
-                        <button class="menu">me apunto</button>
+
+                        <button id="presentacionMeApunto" class="menu">me apunto</button>
                         
                         <input type="checkbox" class="check" id="checkEfecto">
                         <label class="menu" for="checkEfecto">enviar mensaje</label>
+                        
                         <div class="enviarMensajeEquipo">
                             <textarea name="" id="areaMensaje" cols="50" rows="7" placeholder="escribe el mensaje"></textarea>
                             <div class="mensajeBotones">
@@ -72,5 +74,5 @@
     <input type="hidden" id="id" value="<?= $id?>">
     <input type="hidden" id="idUser" value="<?= $idUser?>">
 </div>
-<script src="ajax/presentacionEquipo.js"></script>
+<script src="ajax/ajaxPresentacionEquipo.js"></script>
 <?php require 'footer.php';?>

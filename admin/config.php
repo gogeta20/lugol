@@ -23,3 +23,5 @@ $adminPagina = [
 //A é igual a 5
 //< ? php endif; ? >
 ?>
+
+

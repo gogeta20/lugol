@@ -403,8 +403,6 @@ section{
 	font-size: 0.6em;
 }
 
-
-
 #presentacionEquipos{
 	width: 100%;
 }
@@ -596,6 +594,19 @@ div#bannerEquipos{
 		-webkit-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
 		-moz-box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
 		box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+	}
+	
+	.solicitudDescripcionOk{
+		padding: 5px;
+		padding: 5px 12px;
+		margin: 7px 0px;
+		cursor: none !important;
+		background-color: #94F2A2 !important;
+		color: #333333;
+		font-size: 16px;
+		border: solid 1px #999999;
+		border-radius: 3px;
+		width: 50%;
 	}
 	
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
@@ -1229,6 +1240,7 @@ article.oculto{
 	transition: 0.4s;
 	text-align: center;
 }
+
 .no{
 	background-color: #ff6666;
 }
@@ -1257,6 +1269,17 @@ article.oculto{
 	transition: right 0.7s;
 }
 
+.meApuntoDesactivado{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	background-color: #94F2A2;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 5px 10px 5px 0px;
+	box-shadow: 2px 2px 2px #999999;
+	text-align: center;
+}
 
 
 /* ///////////////////////////////////// fin de presentacion Equipos //////////////////////////////////*/

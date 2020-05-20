@@ -1,5 +1,6 @@
 var $id = document.getElementById('id').value;
 var $idUser = document.getElementById('idUser').value;
+
 var ruta = "imagenes/presentacionEquipos/";
 
 var objetoAjax = new XMLHttpRequest();
@@ -11,9 +12,10 @@ var $flechaDerecha = document.getElementById("fd");
 var $imagen = document.getElementById('imagen');
 var $mensajeConfirmado = document.getElementById("mensajeConfirmado");
 var $mensajeAnulado = document.getElementById("mensajeAnulado");
+var $botonMeApunto = document.getElementById("presentacionMeApunto");
 
 
-objetoAjax.open("POST","ajax/presentacionEquipo.php?idEquipo="+$id);
+objetoAjax.open("POST","ajax/ajaxPresentacionEquipo.php?idEquipo="+$id);
 objetoAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
 objetoAjax.onload = function(){
@@ -54,7 +56,7 @@ $mensajeConfirmado.addEventListener('click',function(){
     document.getElementById("checkEfecto").checked =  false;
 
     var objetoAjaxEnviar =  new XMLHttpRequest();
-    objetoAjaxEnviar.open("POST","ajax/presentacionEquipoMensaje.php");
+    objetoAjaxEnviar.open("POST","ajax/ajaxPresentacionEquipoMensaje.php");
     objetoAjaxEnviar.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     var $mensaje = document.getElementById("areaMensaje").value;
@@ -68,4 +70,18 @@ $mensajeConfirmado.addEventListener('click',function(){
 $mensajeAnulado.addEventListener('click',function(){
     document.getElementById("checkEfecto").checked =  false;
     document.getElementById("areaMensaje").value = "";
+});
+
+$botonMeApunto.addEventListener('click',function(){
+    $botonMeApunto.innerHTML = 'registrado <i class="fas fa-check-circle"></i>';
+    $botonMeApunto.className = "meApuntoDesactivado";
+
+    var objetoAjaxApuntado = new XMLHttpRequest();
+    objetoAjaxApuntado.open("POST","ajax/ajaxPresentacionEquipoApuntado.php");
+    objetoAjaxApuntado.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    var $datosApuntado = "idUser="+$idUser+"&idEquipo="+$id;
+
+    objetoAjaxApuntado.send($datosApuntado);
+
 });
