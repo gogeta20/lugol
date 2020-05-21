@@ -23,3 +23,12 @@ function ejecutar($sentencia,$c,$tipo){
    }
 
 }
+function conectarBD($BD) {
+   try {
+     $conexion = new PDO('mysql:host=localhost;dbname=' . $BD['baseDatos'], $BD['user'], $BD['pass']);
+ 
+     return $conexion;
+   } catch (PDOException $e) {
+     return $conexion = false;
+   }
+ }

@@ -608,7 +608,12 @@ div#bannerEquipos{
 		border-radius: 3px;
 		width: 50%;
 	}
-	
+	.cajaJugadores{
+
+		width: 30%;
+		text-align: start;
+		margin: auto;
+	}
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
 	/* ///////////////////////// fin de participa ////////////////////////////////*/
@@ -974,10 +979,26 @@ a{
 	padding: 10px;
 	
 }
+#serHome{
+	position: relative;
+}
 #cuerpoHome{
 	min-height: 100vh;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: 2s ease;
 }
-
+#espaldaHome{
+	min-height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	width: 100%;
+	margin: auto;
+	transform: rotateY(180deg);
+}
 .usuario button{
   background-color: white;
   cursor: pointer;
@@ -1048,6 +1069,31 @@ article.oculto{
 	background-color: #66ff99;
 	
 }
+
+.publicarAnuncioPresidente{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+}
+.publicarAnuncioPresidente button{
+	margin-right: 0;
+}
+
+/* ===== espalda Home ====*/
+/* ===== espalda Home ====*/
+.espaldaHome{
+	margin: 10px 0px;
+	background:linear-gradient(to right,rgba(0, 204, 255, 0.192) 35%,rgba(51, 255, 0, 0.226));
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 4px #999999;
+	min-height: 500px;
+	text-align: center;
+}
+
+/* ///// fin de espalda Home ////*/
+/* ///// fin de espalda Home ////*/
 /* ///////////////////////////////////// fin de Home //////////////////////////////////*/
 /* =======================================resultados ==================================*/
 /* =======================================resultados ==================================*/

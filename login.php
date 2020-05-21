@@ -37,8 +37,17 @@ if (isset($_POST['nuevoUsuario'])) {
     //insert into usuarios values(null,'mauricio','vargas','linux','linux@lite.com','cmauricio2');
     $sentencia =$conex->prepare("insert into usuarios values(null,:n,:e,:p,null)");
     $sentencia->execute(array(':n'=>$regNombre,':e'=>$regEmail,':p'=>$regPass));
+
+
+    $sentenciaEncontrarId = $conex->prepare("SELECT max(id) as idE from usuarios");
+    $sentenciaEncontrarId->execute();
+    $idEncontrado = $sentenciaEncontrarId->fetchAll();
+    
     if ($sentencia) {
+      $numero = (int)$idEncontrado[0]['idE'];
+      $numero++;
       $_SESSION['sesionNombre']=$regNombre;
+      $_SESSION['sesionId']=$numero;
       header('Location:home.php?new=ok');
     }
 
