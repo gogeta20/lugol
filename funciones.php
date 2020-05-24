@@ -168,4 +168,13 @@ function traerResultados($conexion,$sentencia){
   }
 	return $resultados->fetch_All();
 }
+
+function conectar($h,$u,$p,$b){
+
+  $conex = new mysqli($h,$u,$p,$b);
+  if ($conex->connect_errno) {
+     return false;
+  }
+  return $conex;
+}
 ?>

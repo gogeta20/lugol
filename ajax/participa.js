@@ -145,7 +145,7 @@ function traer($inicio,$fin) {
       <div class="solicitudDescripcion">
         <p>${$datos[i]['texto']}</p>
         <div class="botonApuntarseEquipos">
-          <button id="anu${$datos[i]['idAnuncio']}" value="${i}">apuntarse</button>
+          <button id="anu${$datos[i]['idAnuncio']}" value="${$datos[i]['idAnuncio']}">apuntarse</button>
         </div>
       </div>
       `;
@@ -172,7 +172,7 @@ $padreSolitudEquipo.addEventListener('click',function(e){
   if ($booleano) {
     var $anuncioActivado = document.getElementById($v);
     
-    var $idAnuncio = $v.substr(3,1);
+    var $idAnuncio = $v.substr(3,20);
     var $idUser = document.getElementById("idUser").value;
     var objetoAjaxAnuncioOk = new XMLHttpRequest();
 

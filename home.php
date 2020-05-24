@@ -31,6 +31,13 @@ if (isset($_SESSION['sesionNombre'])) {
     $sentenciaPartidos = $conexion->prepare('SELECT (select nombre from equipos where id = calendario.equipoLocal) as equipoL,(select nombre from equipos where id = calendario.equipoVisitante) as equipoV,calendario.hora as hora,calendario.fecha as fecha,calendario.jornada as j FROM equipos join calendario ON equipos.id = calendario.equipoLocal where equipos.id ='.$idEquipo.' UNION SELECT (select nombre from equipos where id = calendario.equipoLocal) as equipoL,(select nombre from equipos where id = calendario.equipoVisitante) as equipoV,calendario.hora as hora,calendario.fecha as fecha,calendario.jornada as j FROM equipos join calendario ON equipos.id = calendario.equipoVisitante where equipos.id ='.$idEquipo.' order by fecha desc');
     $sentenciaPartidos->execute();
     $partidos = $sentenciaPartidos->fetchAll();
+
+    if (count($partidos) ==0) {
+      $mensajeNoPartidos = "no tienes partidos";
+      $noPartidos = true;
+    }else{
+      $noPartidos = false;
+    }
     
     $sentenciaRespuestasAnuncios = $conexion->prepare('SELECT usuarios.nick as nombre,anunciosrespuestas.idAnuncio as numeroAnuncio from anuncios join anunciosrespuestas on anuncios.id = anunciosrespuestas.idAnuncio join usuarios on anunciosrespuestas.idUser = usuarios.id where anuncios.equipo ='.$idEquipo);
     $sentenciaRespuestasAnuncios->execute();
@@ -39,6 +46,10 @@ if (isset($_SESSION['sesionNombre'])) {
     $sentenciaMensajes = $conexion->prepare('SELECT mensajes.mensaje as ms,usuarios.nick as rm from usuarios join mensajes on usuarios.id = mensajes.idRemitente where mensajes.idDestinatario ='.$idUsuario);
     $sentenciaMensajes->execute();
     $mensajes = $sentenciaMensajes->fetchAll();
+
+    $respuestasAnunciosSql = $conexion->prepare('SELECT	usuarios.nick as nombre FROM usuarios join anunciosrespuestas on usuarios.id = anunciosrespuestas.idUser join anuncios on anunciosrespuestas.idAnuncio = anuncios.id WHERE anuncios.equipo ='.$idEquipo);
+    $respuestasAnunciosSql->execute();
+    $respuestasAnuncios = $respuestasAnunciosSql->fetchAll();
     
     if (count($mensajes) ==0) {
       $mensajes = "no tienes mensajes";
@@ -54,34 +65,33 @@ if (isset($_SESSION['sesionNombre'])) {
     $sentenciaClasificacion = $conexion->prepare('SELECT equipos.nombre as equipo, clasificacion.pJugados as pj, clasificacion.pGanado as ga,clasificacion.pEmpatado as em,clasificacion.pPerdido as pe, clasificacion.dGoles as dg, clasificacion.puntos as puntos FROM equipos JOIN clasificacion on equipos.id = clasificacion.id_equipo  ORDER BY clasificacion.puntos  DESC');
     $sentenciaClasificacion->execute();
     $clasificacion = $sentenciaClasificacion->fetchAll();
-
-    for ($i=0; $i < count($clasificacion); $i++) { 
-      if ($clasificacion[$i]['equipo'] == $nombreEquipo ) {
-          $posicionTabla = $i+1;
-          $puntos = $clasificacion[$i]['puntos'];
-          $ganados = $clasificacion[$i]['ga'];
-          $perdidos = $clasificacion[$i]['pe'];
-          $empatados = $clasificacion[$i]['em'];
+    $noClasificado = true;
+      for ($i=0; $i < count($clasificacion); $i++) { 
+        if ($clasificacion[$i]['equipo'] == $nombreEquipo ) {
+            $noClasificado = false;
+            $posicionTabla = $i+1;
+            $puntos = $clasificacion[$i]['puntos'];
+            $ganados = $clasificacion[$i]['ga'];
+            $perdidos = $clasificacion[$i]['pe'];
+            $empatados = $clasificacion[$i]['em'];
+        }else{
+            $mensajeNoClasificado = "no estas clasificado";
+            $posicionTabla = "sin definir";
+        }
       }
-    }
-
-  
-
-
-
-
-
 
   }else{
-      
     // preguntamos si ¿¿tiene equipo??
-    $sentenciaPregunta=$conexion->prepare("select * from usuarios where id = ".$idUsuario);
+    //$sentenciaPregunta=$conexion->prepare("select * from usuarios where id = ".$idUsuario);
+    $sentenciaPregunta=$conexion->prepare("select usuarios.equipo as equipo, equipos.nombre as nombre from usuarios join equipos on usuarios.equipo = equipos.id where usuarios.id = ".$idUsuario);
     $sentenciaPregunta->execute();
     $tieneEquipo = $sentenciaPregunta->fetch();
 
     if ($tieneEquipo['equipo'] != null) {
       $noTieneEquipo = false;
       $suEquipo = (int)$tieneEquipo['equipo'];
+      $idEquipo =(int) $tieneEquipo["equipo"];
+      $nombreEquipo = $tieneEquipo["nombre"];
 
       $sentenciaNombre = $conexion->prepare("select nombre from equipos where id =".$suEquipo);
       $sentenciaNombre->execute();

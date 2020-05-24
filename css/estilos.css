@@ -785,6 +785,14 @@ article div button:hover, .volverError:hover,input[value="entrar"]:hover, .usuar
 	border-top: solid 1px rgb(50, 51, 50);
 	text-align: center;
 }
+.firma2{
+	background-color: #ebebeb00;
+	width: 80%;
+	height: 50px;
+	margin: 25px auto;
+	border-top: solid 1px rgb(50, 51, 50);
+	text-align: center;
+}
 a{
 	
 	text-decoration: none;
@@ -925,6 +933,7 @@ a{
 	font-weight: bolder;
 	
 }
+
 .loginBoton2 {
 	font-weight: bolder;
 	margin-bottom: 0;
@@ -988,7 +997,7 @@ a{
 	transform-style: preserve-3d;
 	transition: 2s ease;
 }
-#espaldaHome{
+#espaldaHome1{
 	min-height: 100vh;
 	position: absolute;
 	left: 0;
@@ -1039,6 +1048,7 @@ a{
 	flex-wrap: wrap;
 }
 .cartel{
+	padding-bottom: 10px;
 	width: 49%;
 	margin: 10px 5px;
 	background: rgba(255, 255, 255, 0.918);
@@ -1079,6 +1089,15 @@ article.oculto{
 .publicarAnuncioPresidente button{
 	margin-right: 0;
 }
+.listaDeJugadores{
+
+	
+}
+.player {
+	display: inline-block;
+	width: 30%;
+	text-align: start;
+}
 
 /* ===== espalda Home ====*/
 /* ===== espalda Home ====*/
@@ -1091,7 +1110,137 @@ article.oculto{
 	min-height: 500px;
 	text-align: center;
 }
+.tablaEspalda{
+	transition: .4s;
+	width: 75%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.subrayado{
+	border-bottom: #999999 1px solid;
+}
+.puntosEspalda{
+	background-color: #bfead1e0;
+	border-radius: 5px;
+}
+.mensajesEspalda{
+	width: 50%;
+}
+.tdTableMensajes{
+	display: flex;
+	flex-direction: column;
+	border: solid black 1px;
+	border-radius: 5px;
+	background-color: #bfead13d;
+	margin-bottom: .6em;
+}
+.tdMensajesEspaldaCabecera{
+	width: 60%;
+	text-align: start;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 1em;
+}
+.tdMensajesEspalda{
+	text-align: start;
+	border-radius: 5px;
+}
+.botonEspaldaMensajes .botonResponderTablaEspalda{
+	display: flex;
+	justify-content: flex-start;
+}
+.cajaBotonesEspaldaMensajes{
+	width: 75%;
+}
+.botonResponderTablaEspalda{/* boton responder del mensaje en tabla*/
+	background-color: #84c2e6;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 5px 10px 5px 0px;
+	box-shadow: 2px 2px 2px #999999;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.mensajesRespuestas{
+	position: relative;
+	min-height: 500px;
+}
+.responderMensajes{
+	position: absolute;
+	transition: .4s;
+	left: 0;
+	top: 0;
+	width: 75%;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.rotarTabla{
+	transition: .8s;
+	position: absolute;
+	transform: rotateY(180deg);
+	width: 75%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.rotarDivRespuesta{
+	left: 0;
+	top: 0;
+	width: 75%;
+	transition: 1s;
+	transform: rotateY(0deg);
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.botonesResponderMensajes{
+	display: flex;
+	justify-content: center;
+	
+}
+.msjVista{
+	text-align: start;
+	border: solid 1px black;
+	padding: 1em;
+	margin-bottom: 2em;
+	border-radius: 5px;
+}
+.tdEspalda{
+	padding: 10px 10px;
+}
 
+.tdSolicitudes{
+	/*width: 50px;*/
+	padding: 10px 10px;
+}
+.transparente{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0 9px;
+	font-size: 21px;
+	transition: .3s;
+}
+.transparente:hover{
+	background: transparent;
+	color: teal;
+	transform: scale(1.1);
+}
+.botonVolverDeEspalda{
+	border: solid 1px black;
+	border-radius: 5px;
+	height: 30px;
+	width: 20%;
+	margin: 0;
+	font-size: 18px;
+	font-weight: bolder;
+	background:linear-gradient(to right,rgba(216, 54, 54, 0.705) 15%,rgba(78, 2, 2, 0.692));
+	color: white;
+}
+.noDisponible{
+	display: none;
+}
 /* ///// fin de espalda Home ////*/
 /* ///// fin de espalda Home ////*/
 /* ///////////////////////////////////// fin de Home //////////////////////////////////*/
@@ -1176,6 +1325,13 @@ article.oculto{
 }
 
 .escudoEquipo{
+	/*background: radial-gradient(to right,transparent 1%, rgb(194, 237, 245),#ebebeb 99%);*/
+	/*background: radial-gradient(circle, rgba(178, 243, 187, 0.459) 45%,transparent);*/
+
+}
+.escudoEquipo img{
+	max-height: 256px;
+	max-width: 256px;
 	/*background: radial-gradient(to right,transparent 1%, rgb(194, 237, 245),#ebebeb 99%);*/
 	/*background: radial-gradient(circle, rgba(178, 243, 187, 0.459) 45%,transparent);*/
 
@@ -1270,6 +1426,11 @@ article.oculto{
 #fi{
 	color: #7c7c7c38;
 }
+
+
+
+
+/*alf Gr + 4  ~*/
 .check{
 	display: none;
 }
@@ -1286,7 +1447,16 @@ article.oculto{
 	transition: 0.4s;
 	text-align: center;
 }
-
+.check:checked ~ .enviarMensajeEquipo{
+	right: 5px;
+}
+.enviarMensajeEquipo{
+	position: absolute;
+	right: -450px;
+	display: flex;
+	flex-direction: column;
+	transition: right 0.7s;
+}
 .no{
 	background-color: #ff6666;
 }
@@ -1302,19 +1472,6 @@ article.oculto{
 	display: flex;
 	justify-content: flex-end;
 }
-
-/*alf Gr + 4  ~*/
-.check:checked ~ .enviarMensajeEquipo{
-	right: 5px;
-}
-.enviarMensajeEquipo{
-	position: absolute;
-	right: -450px;
-	display: flex;
-	flex-direction: column;
-	transition: right 0.7s;
-}
-
 .meApuntoDesactivado{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -1634,4 +1791,27 @@ video{
 }
 .up:hover{
 	color: rgb(77, 129, 85);
+}
+
+/* ==============================  crearEquipo ===================================*/
+
+.formularioSub{
+
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	margin: auto;
+}
+.formularioSub2{
+	border: 1px solid black;
+	margin: 1em;
+	padding: .5em;
+}
+.subItem{
+	margin: .5em 0;
+}
+.detallesSub{
+	width: 80%;
+	margin: 1em auto;
+
 }

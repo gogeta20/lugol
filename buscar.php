@@ -4,13 +4,13 @@ require './funciones.php';
 
 if (isset($_GET['buscar'])) {
 	
-	$conx = conectarBD($baseDatosConfiguracion);
+	$conx = conectarBD($BD);
 	
 	if (!$conx) {
 		header('Location: index.php');
 	}
 	$dato = $_GET['buscar'];
-	$sentencia = $conx->prepare("select * from articulos where titulo like :buscar");
+	$sentencia = $conx->prepare("select * from equipos where nombre like :buscar");
 	$sentencia->execute(array(":buscar" => "%$dato%"));
 	$items = $sentencia->fetchAll();	
 	
@@ -20,7 +20,6 @@ if (isset($_GET['buscar'])) {
 		
 		$respuesta = "Resultados de la busqueda ".$dato;
 	}
-	
 }
 
 require './vistas/busqueda.php';
