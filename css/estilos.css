@@ -37,7 +37,9 @@ colores
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-
+.activarfocusNav{
+	border-bottom: solid black 1px;
+}
 body {
 	word-wrap: break-word;
 	font-size: 18px;
@@ -347,6 +349,7 @@ section{
 	width: 70%;
 	display: flex;
 	justify-content: center;
+	margin: 10px;
 }
 .numPag{
 	display: flex;

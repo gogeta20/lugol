@@ -20,7 +20,7 @@ if (!$items) {
 				</div>
 				<div>
 					<p><?php echo $articulo['descripcion'];?></p>	
-					<a href="<?php echo RUTA?>index.php"><button type="button">volver</button></a>
+					<a href="<?php echo RUTA?>categorias.php"><button type="button">volver</button></a>
 				</div>
 		</article>
 

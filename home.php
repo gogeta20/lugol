@@ -133,7 +133,7 @@ if (isset($_SESSION['sesionNombre'])) {
     }
   }// else de si tiene equipo?
 }
-
+$actHome = "activarfocusNav";
 require 'vistas/home.view.php';
 ?>
 

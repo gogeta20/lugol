@@ -53,6 +53,6 @@ if (isset($_POST['nuevoUsuario'])) {
 
 }
 
-
+$actHome = "activarfocusNav";
 require 'vistas/login.view.php';
 ?>

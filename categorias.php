@@ -18,7 +18,7 @@ $artTotal = totalArticulos($conexion);
 $numPag = ceil($artTotal/$configPagina['post_por_pagina']);
 $ruta = "categorias";
 //var_dump($resultados);
-
+$actCategorias = "activarfocusNav";
 require 'vistas/categorias.view.php'
 
 

@@ -12,6 +12,6 @@ $conexion = conectarMYSQLI($BD);
 $conexion->query("SET TEXT 'utf8'");
 $noticias = traerResultados($conexion,"select * from noticias");
 */
-$mau = "mau";
+$actNoticias = "activarfocusNav";
 require 'vistas/noticias.view.php';
 ?>

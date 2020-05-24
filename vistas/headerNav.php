@@ -33,11 +33,12 @@ if (isset($_SESSION['sesionNombre'])) {
 		<header class="barraSuperior">
       <h1 class="tituloPagina"> <a href="index.php">Futbol Lugo</a></h1>
 			<nav>
-				<a href="resultados.php">Resultados</a>
-				<a href="noticias.php">Noticias</a>
-				<a href="categorias.php">Equipos</a>
-				<a href="marca.php">Participa!!</a>
-        		<a href="login.php"><?= $nombre;?><i class="<?= $icono;?>"></i></a>
+				
+				<a href="resultados.php" class="<?php if(isset($actResultados)){echo $actResultados;}?>">Resultados</a>
+				<a href="noticias.php" class="<?php if(isset($actNoticias)){echo $actNoticias;}?>">Noticias</a>
+				<a href="categorias.php" class="<?php if(isset($actCategorias)){echo $actCategorias;}?>">Equipos</a>
+				<a href="marca.php" class="<?php if(isset($actMarcas)){echo $actMarcas;}?>">Participa!!</a>
+        		<a href="login.php" class="<?php if(isset($actHome)){echo $actHome;}?>"><?= $nombre;?><i class="<?= $icono;?>"></i></a>
 				<!--<a href="">Contacto</a>-->
 			</nav>
 			<div class="busqueda">

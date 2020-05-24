@@ -49,6 +49,6 @@ if (!$conexion) {
     $respuesta = ejecutar("select * from anuncios",$conexion,1);
 }
 */
-
+$actMarcas = "activarfocusNav";
 require 'vistas/marca.view.php';
 ?>

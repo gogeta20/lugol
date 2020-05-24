@@ -24,5 +24,7 @@
     $sentencia4 = $conexion->prepare("select usuarios.nick as usuarios,COUNT(goles.idJugador) as goles,equipos.nombre as equipo from goles JOIN usuarios ON goles.idJugador = usuarios.id join equipos on usuarios.equipo = equipos.id GROUP BY idJugador order by goles DESC");
     $sentencia4->execute();
     $resultadosGoleadores = $sentencia4->fetchAll();
+    
+    $actResultados = "activarfocusNav";
     require 'vistas/resultados.view.php';
 ?>
