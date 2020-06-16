@@ -45,7 +45,7 @@ if (isset($_POST['nuevoUsuario'])) {
     
     if ($sentencia) {
       $numero = (int)$idEncontrado[0]['idE'];
-      $numero++;
+      $numero;
       $_SESSION['sesionNombre']=$regNombre;
       $_SESSION['sesionId']=$numero;
       header('Location:home.php?new=ok');
