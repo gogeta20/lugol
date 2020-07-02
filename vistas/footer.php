@@ -22,7 +22,7 @@
 		</ul>
 	</div>
 	<div class="firma">
-		<p>mauricio vargas</p>
+		<p>mauricio vargas.</p>
 	</div>
 </footer>
 </body>
